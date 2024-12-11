@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Image Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .image-box {
+            flex: 1 1 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-box img {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* CSS Manipulations */
+
+        /* Example: Butterfly Image with Shadow and Filter */
+        .butterfly img {
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+            filter: hue-rotate(90deg);
+        }
+
+        /* Dinosaur Image with Gradient Overlay */
+        .dinosaur {
+            position: relative;
+        }
+
+        .dinosaur img {
+            filter: grayscale(100%);
+        }
+
+        .dinosaur::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5));
+            pointer-events: none;
+        }
+
+        /* Football Field with Overlayed Tic-Tac-Toe */
+        .football-field {
+            position: relative;
+        }
+
+        .football-field img {
+            display: block;
+        }
+
+        .football-field::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('tic-tac-toe.png') no-repeat center;
+            background-size: contain;
+            pointer-events: none;
+        }
+
+        /* Penguins with Sepia Filter */
+        .penguins img {
+            filter: sepia(100%);
+        }
+
+        /* Seagull with Border Radius */
+        .seagull img {
+            border-radius: 50%;
+        }
+
+        /* Theater Stage with Brightness Adjustment */
+        .theater-stage img {
+            filter: brightness(0.8);
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS3 Image Manipulation</h1>
+    <div class="image-container">
+        <div class="image-box butterfly">
+            <img src="butterfly.jpg" alt="Butterfly">
+        </div>
+        <div class="image-box dinosaur">
+            <img src="dinosaur.png" alt="Dinosaur">
+        </div>
+        <div class="image-box football-field">
+            <img src="football_field.jpg" alt="Football Field">
+        </div>
+        <div class="image-box penguins">
+            <img src="penguins.jpg" alt="Penguins">
+        </div>
+        <div class="image-box seagull">
+            <img src="seagull.png" alt="Seagull">
+        </div>
+        <div class="image-box theater-stage">
+            <img src="theater_stage.jpg" alt="Theater Stage">
+        </div>
+    </div>
+</body>
+</html>
